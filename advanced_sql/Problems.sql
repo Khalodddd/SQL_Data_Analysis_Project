@@ -1,4 +1,4 @@
-/*SELECT 
+SELECT 
     COUNT(job_id) AS number_of_jobs,
     CASE
         WHEN job_location = 'Anywhere' THEN 'Remote'
@@ -11,8 +11,8 @@ WHERE
     job_title_short = 'Data Analyst'
 GROUP BY 
     location_category
-*/
-/*SELECT 
+
+SELECT 
     
     DISTINCT(company_dim.name),
     job_id,
@@ -33,13 +33,13 @@ FROM(
     FROM job_postings_fact
     WHERE EXTRACT(MONTH FROM job_posted_date) = 1
 ) AS january_jobs;*/
-/*WITH january_jobs AS (
+WITH january_jobs AS (
 SELECT *
 FROM job_postings_fact
 WHERE EXTRACT(MONTH FROM job_posted_date) = 1
 ) 
 SELECT *
-From january_jobs*/
+From january_jobs
 
 /*SELECT name AS company_name,
                 company_id
@@ -52,7 +52,7 @@ WHERE company_id IN (
     WHERE job_no_degree_mention = TRUE
     ORDER BY company_id
 
-)*/
+)
 /*WITH 
     company_job_count AS (
 SELECT
@@ -95,7 +95,7 @@ INNER JOIN skills_dim AS skills ON skills.skill_id = Remote_job_skills.skill_id
 ORDER BY skill_count DESC
 LIMIT 5;*/
 
-/*SELECT 
+SELECT 
     job_title_short,
     job_location,
     job_via,
@@ -112,6 +112,6 @@ WHERE
     salary_year_avg > 70000 AND
     job_title_short = 'Data Analyst'
 ORDER BY
-    salary_year_avg DESC*/
+    salary_year_avg DESC
 
 
